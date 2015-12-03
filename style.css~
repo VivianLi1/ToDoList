@@ -1,0 +1,7 @@
+.headingType{
+    font-family: 'Dosis', sans-serif;
+}
+
+.listType{
+    font-family: 'Roboto', sans-serif;
+}
