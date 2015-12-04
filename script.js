@@ -10,7 +10,11 @@ var removeItem = function(n){
 };
 
 var highlight = function(n){
-    n.fontcolor = "red";
+    n.style.color = "red";
+}
+
+var unhighlight = function(n){
+    n.style.color = "black";
 }
 
 var buttonCallback = function buttonCallback(e){
@@ -20,18 +24,24 @@ var buttonCallback = function buttonCallback(e){
     document.getElementById("textbox").value = "";
 };
 
+var counter = 0;
+
 var highlightCallback = function highlightCallback(e){
     console.log(e);
     console.log(this);
     var list = document.getElementById("list");
     var items = list.children;
-    var counter = 0;
+    
     if(counter < items.length){
 	highlight(items[counter]);
+	if(counter != 0){
+	    unlighlight(items[counter - 1]);
+	}
 	counter++;
     } else{
 	counter = 0;
     }
+    System.out.println(counter);
 }
     
 
